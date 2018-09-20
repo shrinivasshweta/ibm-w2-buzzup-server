@@ -20,7 +20,7 @@ import com.stackroute.buzzup.service.UserProfileService;
 @CrossOrigin("*")
 public class UserProfileController {
 
-	UserProfileService userProfileService;
+	private UserProfileService userProfileService;
 	
 	@Autowired
 	public UserProfileController(UserProfileService userProfileService) {
