@@ -7,15 +7,12 @@ public class UserProfile {
 
 	@Id
     private String userId;
-	
-	@NotNull
+
 	private String userEmail;
-	
-	@NotNull
+
 	@Transient
     private String userPassword;
-	
-	@NotNull
+
    private String userMobile;
    private String userName;
     private String userGender;
