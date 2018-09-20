@@ -10,8 +10,15 @@ public class UserProfile {
 
 	@Id
     String userId;
-    String userEmail;
+	
+	@NotNull
+	String userEmail;
+	
+	@NotNull
+	@Transient
     String userPassword;
+	
+	@NotNull
     String userMobile;
     String userName;
     String userGender;
