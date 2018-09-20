@@ -23,15 +23,15 @@ import com.stackroute.buzzup.service.UserProfileServiceImpl;
 public class UserProfileServiceImplTest {
 
     @Mock
-    UserProfileRepository userRepository;
+   private UserProfileRepository userRepository;
 
 
-    UserProfile user;
+   private UserProfile user;
 
     @InjectMocks
-    UserProfileServiceImpl userService;
+   private UserProfileServiceImpl userService;
 
-    List<UserProfile> userList = null;
+   private List<UserProfile> userList = null;
     Optional<UserProfile> options;
 
     @Before
