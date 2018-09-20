@@ -1,7 +1,4 @@
 package com.stackroute.buzzup.model;
-
-import java.util.Date;
-
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -9,26 +6,26 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class UserProfile {
 
 	@Id
-    String userId;
+    private String userId;
 	
 	@NotNull
-	String userEmail;
+	private String userEmail;
 	
 	@NotNull
 	@Transient
-    String userPassword;
+    private String userPassword;
 	
 	@NotNull
-    String userMobile;
-    String userName;
-    String userGender;
-    String age;
-    String city;
-    String fburl;
-    String twitterurl;
-    String[] prefLang;
-    String[] movieGenre; 
-    String[] eventCategory;
+   private String userMobile;
+   private String userName;
+    private String userGender;
+    private String age;
+   private String city;
+  private String fburl;
+   private String twitterurl;
+   private String[] prefLang;
+   private String[] movieGenre; 
+   private String[] eventCategory;
     
     public UserProfile() {}
 
