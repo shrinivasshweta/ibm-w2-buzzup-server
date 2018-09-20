@@ -19,7 +19,7 @@ import com.stackroute.buzzup.repository.UserProfileRepository;
 public class UserProfileServiceImpl implements UserProfileService {
 
 	@Autowired
-	UserProfileRepository userProfileRepo;
+	private UserProfileRepository userProfileRepo;
 	
 	
 	public UserProfileServiceImpl(UserProfileRepository userProfileRepo) {
