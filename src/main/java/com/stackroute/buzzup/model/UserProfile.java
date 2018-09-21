@@ -1,39 +1,39 @@
 package com.stackroute.buzzup.model;
+
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
 public class UserProfile {
 
 	@Id
-    private String userId;
+	private String userMobile;
 
 	private String userEmail;
 
 	@Transient
-    private String userPassword;
+	private String userPassword;
+	private String userName;
+	private String userGender;
+	private String age;
+	private String city;
+	private String fburl;
+	private String twitterurl;
+	private String[] prefLang;
+	private String[] movieGenre;
+	private String[] eventCategory;
 
-   private String userMobile;
-   private String userName;
-    private String userGender;
-    private String age;
-   private String city;
-  private String fburl;
-   private String twitterurl;
-   private String[] prefLang;
-   private String[] movieGenre; 
-   private String[] eventCategory;
-    
-    public UserProfile() {}
+	public UserProfile() {
+	}
 
-	public UserProfile(String userId, String userEmail, String userPassword, String userMobile, String userName,
-			String userGender, String age, String city, String fburl, String twitterurl, String[] prefLang,
-			String[] movieGenre, String[] eventCategory) {
+	public UserProfile(String userMobile, String userEmail, String userPassword, String userName, String userGender,
+			String age, String city, String fburl, String twitterurl, String[] prefLang, String[] movieGenre,
+			String[] eventCategory) {
 		super();
-		this.userId = userId;
+		this.userMobile = userMobile;
 		this.userEmail = userEmail;
 		this.userPassword = userPassword;
-		this.userMobile = userMobile;
 		this.userName = userName;
 		this.userGender = userGender;
 		this.age = age;
@@ -45,12 +45,12 @@ public class UserProfile {
 		this.eventCategory = eventCategory;
 	}
 
-	public String getUserId() {
-		return userId;
+	public String getUserMobile() {
+		return userMobile;
 	}
 
-	public void setUserId(String userId) {
-		this.userId = userId;
+	public void setUserMobile(String userMobile) {
+		this.userMobile = userMobile;
 	}
 
 	public String getUserEmail() {
@@ -67,14 +67,6 @@ public class UserProfile {
 
 	public void setUserPassword(String userPassword) {
 		this.userPassword = userPassword;
-	}
-
-	public String getUserMobile() {
-		return userMobile;
-	}
-
-	public void setUserMobile(String userMobile) {
-		this.userMobile = userMobile;
 	}
 
 	public String getUserName() {
@@ -148,8 +140,10 @@ public class UserProfile {
 	public void setEventCategory(String[] eventCategory) {
 		this.eventCategory = eventCategory;
 	}
-    
+
 	
-    
-    
+
+
+
+
 }
