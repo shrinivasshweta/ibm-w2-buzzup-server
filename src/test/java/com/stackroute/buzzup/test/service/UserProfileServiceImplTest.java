@@ -22,10 +22,10 @@ import com.stackroute.buzzup.service.UserProfileServiceImpl;
 public class UserProfileServiceImplTest {
 
     @Mock
-    UserProfileRepository userRepository;
+   private UserProfileRepository userRepository;
 
 
-    UserProfile user;
+   private UserProfile user;
 
     @InjectMocks
    private UserProfileServiceImpl userService;
