@@ -1,10 +1,10 @@
 spring:
   data:
     mongodb:
-      uri: mongodb://localhost/userProfileDb
+      uri: mongodb://localhost/userProfiledatabase
       username: shweta
       password: Root@123
-      database: userProfileDB
+      database: userProfiledatabase
       port: 27017
       host: localhost
 server:
