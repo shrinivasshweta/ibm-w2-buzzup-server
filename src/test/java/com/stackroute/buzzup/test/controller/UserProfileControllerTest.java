@@ -1,5 +1,4 @@
 package com.stackroute.buzzup.test.controller;
-
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.stackroute.buzzup.controller.UserProfileController;
 import com.stackroute.buzzup.exceptions.UserAlreadyExistsException;
@@ -38,9 +37,9 @@ public class UserProfileControllerTest {
     @MockBean
     private UserProfile user;
     @MockBean
-    UserProfileService userService;
+    private UserProfileService userService;
     @InjectMocks
-    UserProfileController userController;
+   private UserProfileController userController;
 
     @Before
     public void setUp() {
