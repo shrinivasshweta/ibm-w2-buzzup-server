@@ -5,7 +5,7 @@ import com.stackroute.buzzup.exceptions.UserAlreadyExistsException;
 import com.stackroute.buzzup.exceptions.UserNotFoundException;
 import com.stackroute.buzzup.model.UserProfile;
 import com.stackroute.buzzup.service.UserProfileService;
-
+import org.bson.json.JsonParseException;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -150,7 +150,7 @@ public class UserProfileControllerTest {
         try {
             return new ObjectMapper().writeValueAsString(obj);
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            throw new JsonParseException(e);
         }
     }
 }
