@@ -3,6 +3,7 @@ package com.stackroute.buzzup.test.service;
 import static org.junit.Assert.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
+
 import java.util.Optional;
 import org.junit.Before;
 import org.junit.Test;
@@ -21,10 +22,10 @@ import com.stackroute.buzzup.service.UserProfileServiceImpl;
 public class UserProfileServiceImplTest {
 
     @Mock
-   private UserProfileRepository userRepository;
+    UserProfileRepository userRepository;
 
 
-   private UserProfile user;
+    UserProfile user;
 
     @InjectMocks
    private UserProfileServiceImpl userService;
@@ -38,10 +39,9 @@ public class UserProfileServiceImplTest {
         String l[] = {"eng"};
         String g[] = {"horror"};
         String c[] = {"comedy"};
-        user.setUserId("04");
+        user.setUserMobile("9898989898");
         user.setUserEmail("shshri31@in.ibm.com");
         user.setUserPassword("root123");
-        user.setUserMobile("9898989898");
         user.setUserName("shweta");
         user.setUserGender("female");
         user.setAge("18");
@@ -73,17 +73,17 @@ public class UserProfileServiceImplTest {
 
     @Test
     public void updateUser() throws UserNotFoundException {
-        when(userRepository.findById(user.getUserId())).thenReturn(options);
-        user.setUserMobile("1234567789");
-        UserProfile fetchuser = userService.updateUser(user.getUserId(), user);
+        when(userRepository.findById(user.getUserMobile())).thenReturn(options);
+        user.setUserMobile("9898989898");
+        UserProfile fetchuser = userService.updateUser(user.getUserMobile(), user);
         assertEquals(user, fetchuser);
 
     }
 
     @Test
     public void deleteUserSuccess() throws UserNotFoundException {
-        when(userRepository.findById(user.getUserId())).thenReturn(options);
-        boolean flag = userService.deleteUser(user.getUserId());
+        when(userRepository.findById(user.getUserMobile())).thenReturn(options);
+        boolean flag = userService.deleteUser(user.getUserMobile());
         assertEquals(true, flag);
 
     }
@@ -91,9 +91,9 @@ public class UserProfileServiceImplTest {
     @Test
     public void getUserById() throws UserNotFoundException {
 
-        when(userRepository.findById(user.getUserId())).thenReturn(options);
+        when(userRepository.findById(user.getUserMobile())).thenReturn(options);
 
-        UserProfile fetchedUser = userService.getUserById(user.getUserId());
+        UserProfile fetchedUser = userService.getUserByMobile(user.getUserMobile());
 
         assertEquals(user, fetchedUser);
 
