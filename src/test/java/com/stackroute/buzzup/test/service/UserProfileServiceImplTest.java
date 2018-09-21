@@ -3,8 +3,6 @@ package com.stackroute.buzzup.test.service;
 import static org.junit.Assert.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
-
-import java.util.List;
 import java.util.Optional;
 import org.junit.Before;
 import org.junit.Test;
