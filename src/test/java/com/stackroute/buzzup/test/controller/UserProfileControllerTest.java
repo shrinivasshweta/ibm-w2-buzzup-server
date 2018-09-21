@@ -1,8 +1,8 @@
 package com.stackroute.buzzup.test.controller;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.stackroute.buzzup.controller.UserProfileController;
-import com.stackroute.buzzup.exceptions.UserAlreadyExistsException;
-import com.stackroute.buzzup.exceptions.UserNotFoundException;
+// import com.stackroute.buzzup.exceptions.UserAlreadyExistsException;
+// import com.stackroute.buzzup.exceptions.UserNotFoundException;
 import com.stackroute.buzzup.model.UserProfile;
 import com.stackroute.buzzup.service.UserProfileService;
 import org.bson.json.JsonParseException;
