@@ -93,8 +93,8 @@ public class UserProfileController {
     public ResponseEntity<?> deleteUser(@PathVariable String id) {
         try {
         	boolean userDel=userProfileService.deleteUser(id);
-       
-                if(userDel!=false)
+       //if(userDel!=false)
+                if(userDel)
                 {
                     return new ResponseEntity<String>("Deleted Successfully", HttpStatus.OK);
             }
