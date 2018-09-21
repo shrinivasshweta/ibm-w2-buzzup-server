@@ -39,8 +39,8 @@ public class UserProfileServiceImpl implements UserProfileService {
 	}
 
 	
-	public UserProfile updateUser(String userId, UserProfile user) throws UserNotFoundException {
-		UserProfile updateUser= getUserById(userId);
+	public UserProfile updateUser(String userMobile, UserProfile user) throws UserNotFoundException {
+		UserProfile updateUser= getUserByMobile(userMobile);
 		if(updateUser!=null) 
 		{
 			userProfileRepo.save(updateUser);
@@ -52,8 +52,8 @@ public class UserProfileServiceImpl implements UserProfileService {
 	}
 
 	
-	public boolean deleteUser(String userId) throws UserNotFoundException {
-		UserProfile deletedUser= getUserById(userId);
+	public boolean deleteUser(String userMobile) throws UserNotFoundException {
+		UserProfile deletedUser= getUserByMobile(userMobile);
 		if(deletedUser!=null) 
 		{
 			userProfileRepo.delete(deletedUser);
@@ -64,8 +64,8 @@ public class UserProfileServiceImpl implements UserProfileService {
 	}
 
 
-	public UserProfile getUserById(String userId) throws UserNotFoundException {
-		UserProfile displayUser=userProfileRepo.findById(userId).get();
+	public UserProfile getUserByMobile(String userMobile) throws UserNotFoundException {
+		UserProfile displayUser=userProfileRepo.findById(userMobile).get();
 		if(displayUser!=null) {
 			return displayUser;
 		}else
