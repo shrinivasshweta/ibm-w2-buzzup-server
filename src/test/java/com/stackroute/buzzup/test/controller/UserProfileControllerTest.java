@@ -49,10 +49,9 @@ public class UserProfileControllerTest {
         String l[] = {"eng"};
         String g[] = {"horror"};
         String c[] = {"comedy"};
-        user.setUserId("04");
+        user.setUserMobile("9898989898");
         user.setUserEmail("shshri31@in.ibm.com");
         user.setUserPassword("root123");
-        user.setUserMobile("9898989898");
         user.setUserName("shweta");
         user.setUserGender("female");
         user.setAge("18");
@@ -89,8 +88,8 @@ public class UserProfileControllerTest {
     @Test
     public void updateUserSuccess() throws Exception {
         user.setUserPassword("23456789");
-        when(userService.updateUser(eq(user.getUserId()), any())).thenReturn(user);
-        mockMvc.perform(put("/api/v1/userprofile/09")
+        when(userService.updateUser(eq(user.getUserMobile()), any())).thenReturn(user);
+        mockMvc.perform(put("/api/v1/userprofile/9898989898")
                 .contentType(MediaType.APPLICATION_JSON).content(asJsonString(user)))
                 .andExpect(status().isOk()).andDo(MockMvcResultHandlers.print());
 
@@ -108,8 +107,8 @@ public class UserProfileControllerTest {
 
     @Test
     public void deleteUserSuccess() throws Exception {
-        when(userService.deleteUser("09")).thenReturn(true);
-        mockMvc.perform(delete("/api/v1/userprofile/09")
+        when(userService.deleteUser("9898989898")).thenReturn(true);
+        mockMvc.perform(delete("/api/v1/userprofile/9898989898")
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andDo(MockMvcResultHandlers.print());
@@ -131,8 +130,8 @@ public class UserProfileControllerTest {
     @Test
     public void getByUserIdSuccess() throws Exception {
 
-        when(userService.getUserById("09")).thenReturn(user);
-        mockMvc.perform(get("/api/v1/userprofile/09").contentType(MediaType.APPLICATION_JSON))
+        when(userService.getUserByMobile("9898989898")).thenReturn(user);
+        mockMvc.perform(get("/api/v1/userprofile/9898989898").contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andDo(MockMvcResultHandlers.print());
     }
