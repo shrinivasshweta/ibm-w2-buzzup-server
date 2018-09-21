@@ -4,7 +4,7 @@ spring:
       uri: mongodb://localhost/userProfileDb
       username: shweta
       password: Root@123
-      database: userProfileDb
+      database: userProfileDB
       port: 27017
       host: localhost
 server:
