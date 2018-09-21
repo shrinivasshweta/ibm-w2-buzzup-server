@@ -31,8 +31,7 @@ public class UserProfileServiceImplTest {
     @InjectMocks
    private UserProfileServiceImpl userService;
 
-   private List<UserProfile> userList = null;
-    Optional<UserProfile> options;
+   private Optional<UserProfile> options;
 
     @Before
     public void setUp() {
