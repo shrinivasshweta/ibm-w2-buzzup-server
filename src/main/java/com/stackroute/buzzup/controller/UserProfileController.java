@@ -34,7 +34,7 @@ public class UserProfileController {
 	 * database. This handler method returns any one of the status messages
 	 * basis on different situations:
 	 * 1. 201(CREATED) - If the user created successfully. 
-	 * 2. 409(CONFLICT) - If the userId conflicts with any existing user
+	 * 2. 409(CONFLICT) - If the usermobile conflicts with any existing user
 	 * 
 	 * This handler method should map to the URL "/api/v1/userprofile" using HTTP POST method
 	 */
@@ -58,16 +58,16 @@ public class UserProfileController {
 	 * database. This handler method will return any one of the status messages
 	 * basis on different situations: 
 	 * 1. 200(OK) - If the user updated successfully.
-	 * 2. 404(NOT FOUND) - If the user with specified userId is not found.
+	 * 2. 404(NOT FOUND) - If the user with specified usermobile is not found.
 	 * 
-	 * This handler method maps to the URL "/api/v1/userprofile/{id}" using HTTP PUT method.
+	 * This handler method maps to the URL "/api/v1/userprofile/{mobile}" using HTTP PUT method.
 	 */
 	
-	@PutMapping("/api/v1/userprofile/{id}")
+	@PutMapping("/api/v1/userprofile/{mobile}")
     public ResponseEntity<?> updateUser(@RequestBody UserProfile userProfile) {
         try {
            
-            UserProfile userUpdated = userProfileService.updateUser(userProfile.getUserId(), userProfile);
+            UserProfile userUpdated = userProfileService.updateUser(userProfile.getUserMobile(), userProfile);
             if (userUpdated != null) {
                 return new ResponseEntity<UserProfile>(userProfile, HttpStatus.OK);
             }
@@ -83,16 +83,16 @@ public class UserProfileController {
 	 * This handler method will return any one of the status messages based on
 	 * different situations: 
 	 * 1. 200(OK) - If the user deleted successfully from database. 
-	 * 2. 404(NOT FOUND) - If the user with specified userId is not found.
+	 * 2. 404(NOT FOUND) - If the user with specified usermobile is not found.
 	 *
-	 * This handler method maps to the URL "/api/v1/userprofile/{id}" using HTTP Delete
+	 * This handler method maps to the URL "/api/v1/userprofile/{mobile}" using HTTP Delete
 	 * method".
 	 */
 	
-	@DeleteMapping("/api/v1/userprofile/{id}")
-    public ResponseEntity<?> deleteUser(@PathVariable String id) {
+	@DeleteMapping("/api/v1/userprofile/{mobile}")
+    public ResponseEntity<?> deleteUser(@PathVariable String mobile) {
         try {
-        	boolean userDel=userProfileService.deleteUser(id);
+        	boolean userDel=userProfileService.deleteUser(mobile);
        //if(userDel!=false)
                 if(userDel)
                 {
@@ -111,14 +111,14 @@ public class UserProfileController {
 	 * handler method will return any one of the status messages based on
 	 * different situations: 
 	 * 1. 200(OK) - If the user found successfully. 
-	 * 2. 404(NOT FOUND) - If the user with specified userId is not found. 
-	 * This handler method swill map to the URL "/api/v1/userprofile/{id}" using HTTP GET method .
+	 * 2. 404(NOT FOUND) - If the user with specified usermobile is not found. 
+	 * This handler method swill map to the URL "/api/v1/userprofile/{mobile}" using HTTP GET method .
 	 */
-	@GetMapping("/api/v1/userprofile/{id}")
-    public ResponseEntity<?> getUserById(@PathVariable("id") String id) {
+	@GetMapping("/api/v1/userprofile/{mobile}")
+    public ResponseEntity<?> getUserBymobile(@PathVariable("mobile") String mobile) {
         try {
            
-            	UserProfile getuser=userProfileService.getUserById(id);
+            	UserProfile getuser=userProfileService.getUserByMobile(mobile);
                 if(getuser==null)
                 	 return new ResponseEntity<String>("User not found", HttpStatus.NOT_FOUND);
                 else
