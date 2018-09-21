@@ -8,9 +8,9 @@ public interface UserProfileService {
 
 	 UserProfile registerUser(UserProfile user) throws UserAlreadyExistsException;
 
-	    UserProfile updateUser(String userId,UserProfile user) throws UserNotFoundException;
+	    UserProfile updateUser(String userMobile,UserProfile user) throws UserNotFoundException;
 
-	    boolean deleteUser(String userId) throws UserNotFoundException;
+	    boolean deleteUser(String userMobile) throws UserNotFoundException;
 
-	    UserProfile getUserById(String userId) throws UserNotFoundException;
+	    UserProfile getUserByMobile(String userMobile) throws UserNotFoundException;
 }
